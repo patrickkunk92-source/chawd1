@@ -3,57 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHAWD • The Alpha Lobster on Base 🦞💪</title>
+  <title>CHAWD • Chad Lobster Dual-Chain 🦞 BASE + SOLANA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400;700&family=Anton&display=swap');
-    
-    body {
-      font-family: 'Anton', system-ui, sans-serif;
-    }
-    
+    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    body { font-family: 'Anton', system-ui, sans-serif; }
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://i.imgur.com/REPLACE-WITH-YOUR-IMAGE-URL.png') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                  url('chawd.png') center/cover no-repeat; /* Use local image or replace with public URL */
     }
-
     .neon-text {
-      text-shadow: 
-        0 0 10px #ff4500,
-        0 0 20px #ff4500,
-        0 0 40px #00ff9f,
-        0 0 80px #00ff9f;
+      text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 40px #00ff9f, 0 0 80px #00ff9f;
     }
-
-    .claw {
-      animation: clawPinch 1.5s infinite alternate;
-    }
-
-    @keyframes clawPinch {
-      from { transform: rotate(-12deg); }
-      to { transform: rotate(12deg); }
-    }
-
-    .section-title {
-      position: relative;
-    }
-    
     .section-title:after {
       content: '';
       position: absolute;
       bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
+      width: 120px;
+      height: 5px;
       background: linear-gradient(to right, #ff4500, #00ff9f);
       border-radius: 9999px;
-    }
-
-    .bankr-badge {
-      background: linear-gradient(90deg, #00ff9f, #ff4500);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
@@ -63,165 +35,134 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-red-500/30">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-2xl">🦞</div>
-        <span class="text-4xl font-black tracking-tighter neon-text">CHAWD</span>
+        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-3xl">🦞</div>
+        <span class="text-5xl font-black tracking-tighter neon-text">CHAWD</span>
       </div>
-      
-      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
-        <a href="#lore" class="hover:text-orange-400 transition">LORE</a>
-        <a href="#tokenomics" class="hover:text-orange-400 transition">TOKENOMICS</a>
-        <a href="#buy" class="hover:text-orange-400 transition">BUY NOW</a>
-        <a href="#community" class="hover:text-orange-400 transition">COMMUNITY</a>
+      <div class="hidden md:flex items-center gap-10 text-xl font-medium">
+        <a href="#origin" class="hover:text-orange-400 transition">ORIGIN</a>
+        <a href="#chains" class="hover:text-orange-400 transition">SOL vs BASE</a>
+        <a href="#buy" class="hover:text-orange-400 transition">BUY</a>
+        <a href="#community" class="hover:text-orange-400 transition">CLAW GANG</a>
       </div>
-
-      <a href="#buy" 
-         class="px-8 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 rounded-full font-black text-xl hover:scale-110 transition transform">
-        BUY $CHAWD
-      </a>
+      <a href="#buy" class="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 font-black text-2xl rounded-full hover:scale-110 transition">BUY $CHAWD</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center pt-20">
+  <section class="hero-bg min-h-screen flex items-center pt-24">
     <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="flex justify-center mb-6 gap-4">
-        <div class="inline-flex items-center gap-4 bg-black/70 backdrop-blur px-8 py-3 rounded-3xl border border-white/20">
-          <span class="text-2xl">🦞</span>
-          <span class="font-black text-5xl tracking-tighter neon-text">CHAWD</span>
-          <span class="text-2xl">💪</span>
+      <div class="flex justify-center gap-6 mb-8 flex-wrap">
+        <div class="inline-flex items-center gap-4 bg-cyan-600/20 border border-cyan-400 px-8 py-4 rounded-3xl text-2xl font-black">
+          BASE 🦞🌊
         </div>
-        <div class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-black px-6 py-3 rounded-3xl text-xl">
-          LAUNCHED ON <span class="bankr-badge ml-2 text-2xl">BANKR</span>
+        <div class="inline-flex items-center gap-4 bg-orange-600/20 border border-orange-400 px-8 py-4 rounded-3xl text-2xl font-black">
+          SOLANA 🦞☀️
         </div>
       </div>
-      
-      <h1 class="text-[6.5rem] md:text-[8rem] leading-none font-black tracking-[-4px] neon-text mb-6">
-        THE CHAD<br>LOBSTER
+
+      <h1 class="text-8xl md:text-10xl leading-none font-black tracking-[-6px] neon-text mb-6">
+        CHAD<br>LOBSTER
       </h1>
-      
-      <p class="max-w-2xl mx-auto text-3xl md:text-4xl font-medium mb-10 text-emerald-300">
-        Claws out. Shades on. Base taken. Launched via Bankr.
+      <p class="text-4xl md:text-5xl font-medium text-emerald-300 mb-12">
+        Born from @clawdiabott's X callout • Dual-chain domination • Bankr launched
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <!-- PRIMARY BUY BUTTON -->
-        <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" 
-           target="_blank"
-           onclick="launchConfetti()"
-           class="group px-12 py-6 bg-white text-black font-black text-3xl rounded-2xl flex items-center justify-center gap-4 hover:bg-orange-400 hover:text-white transition-all active:scale-95">
-          <span>BUY $CHAWD NOW</span>
-          <span class="text-4xl group-active:rotate-12 transition">🦞</span>
+      <div class="flex flex-col md:flex-row gap-8 justify-center">
+        <a href="#buy-base" class="px-12 py-6 bg-gradient-to-r from-cyan-600 to-blue-600 font-black text-4xl rounded-3xl flex items-center justify-center gap-4 hover:scale-105 transition shadow-xl">
+          BASE VERSION 🌊
         </a>
-        
-        <!-- SECONDARY UNISWAP -->
-        <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" 
-           target="_blank"
-           class="px-12 py-6 border-4 border-white/80 font-black text-3xl rounded-2xl flex items-center justify-center gap-4 hover:border-orange-400 hover:text-orange-400 transition">
-          UNISWAP
+        <a href="#buy-sol" class="px-12 py-6 bg-gradient-to-r from-orange-600 to-yellow-500 font-black text-4xl rounded-3xl flex items-center justify-center gap-4 hover:scale-105 transition shadow-xl">
+          SOL VERSION ☀️
         </a>
       </div>
 
-      <div class="mt-12 text-sm uppercase tracking-widest flex justify-center gap-8">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-check text-emerald-400"></i>
-          <span>0% TAXES</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-check text-emerald-400"></i>
-          <span>LP BURNED</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-check text-emerald-400"></i>
-          <span>100% COMMUNITY • BANKR LAUNCH</span>
-        </div>
-      </div>
-
-      <div class="mt-20 flex justify-center">
-        <div class="animate-bounce text-6xl">↓</div>
+      <div class="mt-16 flex justify-center gap-10 text-xl uppercase tracking-widest">
+        <div><i class="fa-solid fa-check text-emerald-400 mr-2"></i>0% TAX</div>
+        <div><i class="fa-solid fa-check text-emerald-400 mr-2"></i>LP BURNED</div>
+        <div><i class="fa-solid fa-check text-emerald-400 mr-2"></i>FAIR LAUNCH</div>
       </div>
     </div>
   </section>
 
-  <!-- LORE -->
-  <section id="lore" class="py-24 bg-[#0f1a2e]">
+  <!-- ORIGIN -->
+  <section id="origin" class="py-24 bg-[#0f1a2e]">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="section-title text-7xl font-black mb-12">THE LEGEND OF CHAWD</h2>
-      
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="text-left text-2xl leading-relaxed text-gray-300">
-          <p class="mb-8">While other tokens were being soft, one lobster hit the gym… then hit Bankr.</p>
-          <p class="mb-8">He swapped his shell for gains. Traded fear for neon shades. Turned pinchers into diamond hands.</p>
-          <p class="text-orange-400 font-black text-4xl">Now he’s here to flex on the entire Base chain.</p>
-          <p class="mt-8">No dev wallet.<br>No taxes.<br>Bankr-launched. Pure alpha.</p>
-          <p class="mt-12 text-emerald-400 text-3xl font-black">CHAWD isn’t just a token.<br>He’s a lifestyle.</p>
+      <h2 class="section-title text-7xl font-black mb-12 neon-text">THE ORIGIN STORY</h2>
+      <p class="text-3xl leading-relaxed text-gray-300 max-w-4xl mx-auto">
+        It all started with a fire X post from <a href="https://x.com/Clawdiabott" target="_blank" class="text-orange-400 font-black hover:underline">@clawdiabott</a> calling out the ultimate Chad Lobster.<br><br>
+        Bankr bot answered the call — launching $CHAWD (Base) and its Solana twin (vape-infused ape energy) for maximum dual-chain chaos.<br><br>
+        No rugs. No mercy. Just claws, shades, and gains across chains.
+      </p>
+    </div>
+  </section>
+
+  <!-- CHAINS COMPARISON -->
+  <section id="chains" class="py-24 bg-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center text-7xl font-black mb-16 neon-text">SOLANA vs BASE</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- BASE -->
+        <div class="bg-gradient-to-br from-blue-950/80 to-cyan-950/50 border-2 border-cyan-500/40 p-10 rounded-3xl">
+          <div class="text-6xl mb-6">🌊 BASE</div>
+          <div class="space-y-6 text-2xl text-left">
+            <p><span class="text-gray-400">CA:</span> <span class="font-mono break-all">0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</span></p>
+            <p><span class="text-gray-400">DEX:</span> Uniswap V3</p>
+            <p><span class="text-gray-400">Supply:</span> 100B</p>
+            <p><span class="text-gray-400">Taxes:</span> <span class="text-emerald-400 font-black">0/0</span></p>
+            <p><span class="text-gray-400">Launch:</span> Bankr on Base</p>
+          </div>
         </div>
-        
-        <div class="relative">
-          <img src="https://i.imgur.com/REPLACE-WITH-YOUR-IMAGE-URL.png" 
-               alt="CHAWD the Lobster Chad" 
-               class="rounded-3xl shadow-2xl shadow-orange-500/50 mx-auto">
-          <div class="absolute -bottom-6 -right-6 bg-black/90 text-3xl px-8 py-4 rounded-2xl border border-emerald-400 flex items-center gap-3">
-            <span class="text-emerald-400">LIVE ON</span>
-            <span class="text-4xl">🔗</span>
-            <span class="font-black">BASE • BANKR</span>
+
+        <!-- SOLANA -->
+        <div class="bg-gradient-to-br from-orange-950/80 to-yellow-950/50 border-2 border-orange-500/40 p-10 rounded-3xl">
+          <div class="text-6xl mb-6">☀️ SOLANA</div>
+          <div class="space-y-6 text-2xl text-left">
+            <p><span class="text-gray-400">CA:</span> <span class="font-mono break-all">CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</span></p>
+            <p><span class="text-gray-400">DEX:</span> Jupiter / Raydium</p>
+            <p><span class="text-gray-400">Supply:</span> Check DexScreener (fair launch)</p>
+            <p><span class="text-gray-400">Taxes:</span> <span class="text-emerald-400 font-black">0/0 assumed</span></p>
+            <p><span class="text-gray-400">Launch:</span> Bankr bot via @Clawdiabott</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TOKENOMICS -->
-  <section id="tokenomics" class="py-24 bg-black">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="section-title text-center text-7xl font-black mb-16">TOKENOMICS</h2>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gradient-to-br from-red-900/50 to-orange-900/30 border border-orange-400/50 p-10 rounded-3xl text-center">
-          <div class="text-6xl mb-4">🦞</div>
-          <div class="text-5xl font-black mb-2">100,000,000,000</div>
-          <div class="text-2xl text-emerald-300">$CHAWD</div>
-          <div class="mt-8 text-sm uppercase tracking-widest text-gray-400">Fair launch via Bankr • No pre-sale</div>
-        </div>
-        
-        <div class="bg-gradient-to-br from-emerald-900/50 to-cyan-900/30 border border-emerald-400/50 p-10 rounded-3xl text-center">
-          <div class="text-6xl mb-4">🔥</div>
-          <div class="text-5xl font-black mb-2">100%</div>
-          <div class="text-2xl text-emerald-300">LP BURNED</div>
-          <div class="mt-8 text-sm uppercase tracking-widest text-gray-400">Renounced • Bankr deployed</div>
-        </div>
-        
-        <div class="bg-gradient-to-br from-orange-900/50 to-red-900/30 border border-red-400/50 p-10 rounded-3xl text-center">
-          <div class="text-6xl mb-4">0️⃣</div>
-          <div class="text-5xl font-black mb-2">0/0</div>
-          <div class="text-2xl text-emerald-300">TAXES</div>
-          <div class="mt-8 text-sm uppercase tracking-widest text-gray-400">Pure Bankr alpha</div>
-        </div>
-      </div>
-
-      <div class="text-center mt-12 text-gray-400 text-xl font-mono break-all">
-        CONTRACT: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3
-      </div>
-    </div>
-  </section>
-
   <!-- BUY SECTION -->
   <section id="buy" class="py-24 bg-[#0f1a2e]">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="section-title text-7xl font-black mb-12">HOW TO GET $CHAWD</h2>
-      
-      <div class="bg-zinc-950 border border-orange-500/30 p-12 rounded-3xl">
-        <div class="text-3xl mb-8 font-medium">1. Get BASE ETH on Coinbase / Binance / Wallet</div>
-        <div class="text-3xl mb-8 font-medium">2. Connect to Uniswap on Base</div>
-        <div class="text-3xl mb-12 font-medium">3. Swap ETH → $CHAWD (contract auto-filled)</div>
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center text-7xl font-black mb-16 neon-text">BUY $CHAWD</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- BASE BUY -->
+        <div id="buy-base" class="bg-zinc-950/80 border border-cyan-500/30 p-12 rounded-3xl">
+          <h3 class="text-5xl font-black mb-8 text-cyan-400">BASE VERSION</h3>
+          <ol class="list-decimal pl-8 space-y-6 text-2xl mb-10">
+            <li>Bridge/get BASE ETH</li>
+            <li>Connect wallet to Uniswap (Base chain)</li>
+            <li>Swap → enjoy the flex</li>
+          </ol>
+          <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" 
+             target="_blank" onclick="launchConfetti()"
+             class="block w-full py-8 bg-gradient-to-r from-cyan-600 to-blue-600 text-4xl font-black rounded-3xl text-center hover:scale-105 transition">
+            BUY ON UNISWAP (BASE) 🦞
+          </a>
+        </div>
 
-        <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" 
-           target="_blank"
-           onclick="launchConfetti()"
-           class="inline-block w-full max-w-md mx-auto px-16 py-8 bg-gradient-to-r from-orange-500 via-red-600 to-orange-500 text-4xl font-black rounded-3xl hover:scale-110 transition shadow-2xl shadow-orange-500/60">
-          BUY $CHAWD ON UNISWAP 🦞
-        </a>
-        
-        <p class="mt-8 text-emerald-400 text-xl">Launched via Bankr • Liquidity added automatically</p>
+        <!-- SOL BUY -->
+        <div id="buy-sol" class="bg-zinc-950/80 border border-orange-500/30 p-12 rounded-3xl">
+          <h3 class="text-5xl font-black mb-8 text-orange-400">SOLANA VERSION</h3>
+          <ol class="list-decimal pl-8 space-y-6 text-2xl mb-10">
+            <li>Get SOL in Phantom/Solflare</li>
+            <li>Go to Jupiter aggregator</li>
+            <li>Paste CA & swap (auto-routes best)</li>
+          </ol>
+          <a href="https://jup.ag/swap/SOL-CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ" 
+             target="_blank" onclick="launchConfetti()"
+             class="block w-full py-8 bg-gradient-to-r from-orange-600 to-yellow-500 text-4xl font-black rounded-3xl text-center hover:scale-105 transition">
+            BUY ON JUPITER (SOL) 🦞💨
+          </a>
+          <p class="text-center mt-6 text-gray-400">DexScreener: <a href="https://dexscreener.com/solana/CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ" target="_blank" class="text-orange-400 hover:underline">View Chart</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -229,65 +170,46 @@
   <!-- COMMUNITY -->
   <section id="community" class="py-24 bg-black">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="section-title text-7xl font-black mb-12">JOIN THE CLAW GANG</h2>
-      
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-        <a href="https://x.com/search?q=%24CHAWD" target="_blank" class="bg-zinc-900 hover:bg-orange-900/30 border border-white/10 p-8 rounded-3xl transition group">
-          <i class="fa-brands fa-x-twitter text-6xl mb-4 group-hover:scale-110 transition"></i>
-          <div class="font-black text-2xl">X / TWITTER</div>
+      <h2 class="section-title text-7xl font-black mb-12 neon-text">JOIN THE CLAW GANG</h2>
+      <div class="flex justify-center gap-12 flex-wrap">
+        <a href="https://x.com/Clawdiabott" target="_blank" class="text-3xl hover:text-orange-400 transition flex items-center gap-4">
+          <i class="fa-brands fa-x-twitter text-6xl"></i> @Clawdiabott (Origin)
         </a>
-        <a href="https://t.me/CHAWD" target="_blank" class="bg-zinc-900 hover:bg-emerald-900/30 border border-white/10 p-8 rounded-3xl transition group">
-          <i class="fa-brands fa-telegram text-6xl mb-4 group-hover:scale-110 transition"></i>
-          <div class="font-black text-2xl">TELEGRAM</div>
-        </a>
-        <!-- Add your real links above -->
+        <!-- Add TG/Discord if you have links -->
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="bg-[#05070f] py-12 border-t border-orange-500/20">
-    <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
-      <p>$CHAWD on Base • Launched via Bankr.bot • For entertainment only.</p>
-      <p class="mt-4 font-mono">CA: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</p>
-      <p class="mt-8">Made with claws &amp; alpha by the CHAWD gang • 2026</p>
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
+      <p>Chad Lobster Meme • Dual-Chain Alpha (Base + Solana) • Entertainment only. DYOR.</p>
+      <p class="mt-4 font-mono">Base CA: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</p>
+      <p class="font-mono">Sol CA: CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</p>
+      <p class="mt-8">Made with claws by the gang • 2026</p>
     </div>
   </footer>
 
   <script>
     function launchConfetti() {
-      const colors = ['#ff4500', '#00ff9f', '#ffd700'];
-      for (let i = 0; i < 120; i++) {
+      const colors = ['#ff4500', '#00ff9f', '#ffd700', '#00bfff'];
+      for (let i = 0; i < 150; i++) {
         setTimeout(() => {
-          const confetti = document.createElement('div');
-          confetti.style.position = 'fixed';
-          confetti.style.left = Math.random() * 100 + 'vw';
-          confetti.style.top = '-20px';
-          confetti.style.width = '12px';
-          confetti.style.height = '12px';
-          confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-          confetti.style.opacity = Math.random() * 0.8 + 0.6;
-          confetti.style.zIndex = 99999;
-          document.body.appendChild(confetti);
-          
-          let y = -20, rot = Math.random() * 360, vx = (Math.random() - 0.5) * 4;
+          const c = document.createElement('div');
+          c.style.position = 'fixed'; c.style.left = Math.random()*100 + 'vw'; c.style.top = '-10px';
+          c.style.width = '10px'; c.style.height = '10px';
+          c.style.background = colors[Math.floor(Math.random()*colors.length)];
+          c.style.opacity = Math.random()*0.7 + 0.5; c.style.zIndex = 9999;
+          document.body.appendChild(c);
+          let y = -10, vx = (Math.random()-0.5)*5;
           const fall = setInterval(() => {
-            y += 7 + Math.random() * 8;
-            rot += 15;
-            confetti.style.top = y + 'px';
-            confetti.style.left = (parseFloat(confetti.style.left) + vx) + 'vw';
-            confetti.style.transform = `rotate(${rot}deg)`;
-            if (y > window.innerHeight + 50) {
-              clearInterval(fall);
-              confetti.remove();
-            }
-          }, 16);
-        }, i * 2.5);
+            y += 6 + Math.random()*8; c.style.top = y + 'px'; c.style.left = (parseFloat(c.style.left)+vx)+'vw';
+            if (y > window.innerHeight) { clearInterval(fall); c.remove(); }
+          }, 20);
+        }, i * 4);
       }
     }
-
-    // Auto confetti on load for hype
-    setTimeout(() => launchConfetti(), 800);
+    setTimeout(launchConfetti, 1000); // hype on load
   </script>
 </body>
 </html>
