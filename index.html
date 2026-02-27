@@ -72,6 +72,7 @@
         <span class="title-font text-4xl font-black tracking-tighter neon-text">CHAWD</span>
       </div>
 
+      <!-- Desktop links -->
       <div class="hidden md:flex items-center gap-10 text-lg font-medium">
         <a href="#origin" class="hover:text-orange-400 transition">ORIGIN</a>
         <a href="#chains" class="hover:text-orange-400 transition">CHAINS</a>
@@ -80,32 +81,12 @@
         <a href="#community" class="hover:text-orange-400 transition">GANG</a>
       </div>
 
-      <a href="#buy" class="px-8 py-3.5 bg-white text-black font-bold text-lg rounded-2xl hover:bg-orange-400 hover:text-white transition-all glow-orange">
+      <!-- Buy button (desktop) -->
+      <a href="#buy" class="hidden md:block px-8 py-3.5 bg-white text-black font-bold text-lg rounded-2xl hover:bg-orange-400 hover:text-white transition-all glow-orange">
         BUY $CHAWD
       </a>
 
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden text-3xl">☰</button>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center pt-20 relative">
-    <div class="max-w-7xl mx-auto px-6 text-center z-10">
-      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-3 rounded-3xl border border-white/20 mb-8">
-        <div class="flex items-center gap-2">
-          <span class="text-cyan-400 text-2xl">●</span>
-          <span class="font-bold">BASE</span>
-        </div>
-        <div class="w-px h-6 bg-white/30"></div>
-        <div class="flex items-center gap-2">
-          <span class="text-orange-400 text-2xl">●</span>
-          <span class="font-bold">SOLANA</span>
-        </div>
-      </div>
-
-      <h1 class="title-font text-[7rem] md:text-[9.5rem] leading-none font-black tracking-[-8px] neon-text mb-6">
-        THE CHAD<br>LOBSTER
-      </h1>
-      <p class="max-w-2xl mx-auto text-3xl md:text-4xl font-light text-emerald-300 mb-12">
-        Born on
+      <button id="mobile-toggle" class="md:hidden text-4xl focus:outline-none text-white">
+        <i class="fa-solid fa-bars"></i>
+      </button>
