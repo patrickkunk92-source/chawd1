@@ -53,6 +53,7 @@
         <a href="#origin" class="hover:text-orange-400 transition">ORIGIN</a>
         <a href="#chains" class="hover:text-orange-400 transition">SOL vs BASE</a>
         <a href="#buy" class="hover:text-orange-400 transition">BUY</a>
+        <a href="#registry" class="hover:text-orange-400 transition">BEST CHAWD</a>
         <a href="#community" class="hover:text-orange-400 transition">CLAW GANG</a>
       </div>
       <a href="#buy" class="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 font-black text-2xl rounded-full hover:scale-110 transition">BUY $CHAWD</a>
@@ -175,6 +176,70 @@
             BUY ON JUPITER 🦞
           </a>
           <p class="text-center mt-6 text-orange-400 text-xl">DexScreener: <a href="https://dexscreener.com/solana/cam5m9sursbisubhevghibm7lp4ijggvak8urqyuw4qq" target="_blank" class="underline">Live Chart</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST CHAWD REGISTRY -->
+  <section id="registry" class="py-24 bg-gradient-to-b from-black to-[#0f1a2e]">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="section-title text-7xl font-black mb-12 neon-text">BEST CHAWD REGISTRY</h2>
+      <p class="text-3xl text-emerald-300 mb-10 max-w-4xl mx-auto">
+        Think YOU'RE the actual Chad Lobster? Prove it with no debates.<br>
+        Submit your strongest flex (photo of you as CHAWD, costume, sign, gains pic with lobster vibes, etc.).<br><br>
+        <span class="text-orange-400 font-black">Top proofs get immortalized in the hall of fame below.</span><br>
+        Claws out, send proof.
+      </p>
+
+      <div class="bg-zinc-950 border border-orange-500/40 p-12 rounded-3xl max-w-2xl mx-auto">
+        <form action="https://formspree.io/f/xreadzpr" method="POST" class="space-y-8">
+          <div>
+            <label for="x-handle" class="block text-2xl mb-3">Your X Handle (@username) *</label>
+            <input type="text" id="x-handle" name="x-handle" required placeholder="@PKunkle1992 or @yourhandle" class="w-full p-5 bg-black border border-orange-500/50 rounded-xl text-white text-xl focus:outline-none focus:border-orange-400">
+          </div>
+
+          <div>
+            <label for="proof-url" class="block text-2xl mb-3">Direct Link to Your CHAWD Proof Image *</label>
+            <input type="url" id="proof-url" name="proof-url" required placeholder="https://i.postimg.cc/.../your-chawd-proof.jpg" class="w-full p-5 bg-black border border-orange-500/50 rounded-xl text-white text-xl focus:outline-none focus:border-orange-400">
+            <p class="text-gray-400 mt-2 text-lg">Upload to <a href="https://postimages.org/" target="_blank" class="text-emerald-400 underline hover:text-emerald-300">Postimg.org</a> (free, no account) → copy "Direct link" → paste here</p>
+          </div>
+
+          <div>
+            <label for="proof-description" class="block text-2xl mb-3">Brief Description of Your Proof (optional)</label>
+            <textarea id="proof-description" name="proof-description" rows="4" placeholder="Caught mid-flex at the beach with real lobster claws and CHAWD chain..." class="w-full p-5 bg-black border border-orange-500/50 rounded-xl text-white text-xl focus:outline-none focus:border-orange-400"></textarea>
+          </div>
+
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <button type="submit" class="w-full py-7 bg-gradient-to-r from-orange-600 to-red-600 font-black text-4xl rounded-3xl hover:scale-105 transition shadow-2xl active:scale-95">
+            SUBMIT PROOF → CLAIM CHAWD STATUS 🦞
+          </button>
+        </form>
+      </div>
+
+      <p class="mt-10 text-xl text-gray-400">
+        Submissions hit your Formspree inbox/dashboard instantly. Review them, pick the chaddest ones, and manually add to the gallery below (edit HTML + redeploy). Keeps it curated and elite.
+      </p>
+
+      <div class="mt-20">
+        <h3 class="text-5xl font-black mb-10 text-orange-400">HALL OF FAME</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-zinc-900 border border-emerald-500/30 p-6 rounded-2xl">
+            <img src="https://i.postimg.cc/8c4sC5dt/chawd.jpg" alt="Featured CHAWD Entry" class="w-full rounded-xl mb-4 lobster-glow">
+            <p class="text-2xl font-black">@examplechad</p>
+            <p class="text-emerald-300 mt-2">Beach king flex</p>
+          </div>
+
+          <div class="bg-zinc-900 border border-emerald-500/30 p-6 rounded-2xl opacity-60">
+            <div class="w-full h-64 bg-black/50 rounded-xl flex items-center justify-center text-gray-400 text-2xl">Awaiting Alpha</div>
+            <p class="text-2xl font-black mt-4">Your Spot?</p>
+          </div>
+
+          <div class="bg-zinc-900 border border-emerald-500/30 p-6 rounded-2xl opacity-60">
+            <div class="w-full h-64 bg-black/50 rounded-xl flex items-center justify-center text-gray-400 text-2xl">Awaiting Alpha</div>
+            <p class="text-2xl font-black mt-4">Your Spot?</p>
+          </div>
         </div>
       </div>
     </div>
