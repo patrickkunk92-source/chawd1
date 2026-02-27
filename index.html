@@ -6,142 +6,220 @@
   <meta name="google" content="notranslate">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>CHAWD – The Chad Lobster Token</title>
+  <title>CHAWD – Chad Lobster Token</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    body { font-family: 'Inter', system-ui, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .title-font {
+      font-family: 'Anton', sans-serif;
+    }
+
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
+                  url('https://i.postimg.cc/8c4sC5dt/chawd.jpg') center/cover no-repeat fixed;
+      background-position: center 30%;
+    }
+
+    .neon-text {
+      text-shadow: 
+        0 0 12px #ff4500,
+        0 0 24px #ff4500,
+        0 0 48px #00ff9f;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .lobster-glow {
+      filter: drop-shadow(0 0 40px #ff4500);
+    }
+
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: #e5e7eb;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, #ff4500, #00ff9f);
+      border-radius: 9999px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .float-lobster {
+      animation: float 7s ease-in-out infinite;
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100">
+<body class="bg-zinc-950 text-white overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-900/80 backdrop-blur border-b border-zinc-800">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-md border-b border-zinc-800/50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-zinc-700 rounded-full flex items-center justify-center text-xl">🦞</div>
-        <span class="text-3xl font-semibold tracking-tight">CHAWD</span>
+        <img src="https://i.postimg.cc/8c4sC5dt/chawd.jpg" alt="CHAWD" class="w-10 h-10 rounded-full object-cover border-2 border-orange-500/50">
+        <span class="title-font text-4xl font-black tracking-tight neon-text">CHAWD</span>
       </div>
 
-      <div class="hidden md:flex items-center gap-10 text-base font-medium">
-        <a href="#origin" class="hover:text-zinc-300 transition">Origin</a>
-        <a href="#chains" class="hover:text-zinc-300 transition">Chains</a>
-        <a href="#buy" class="hover:text-zinc-300 transition">Buy</a>
-        <a href="#registry" class="hover:text-zinc-300 transition">Registry</a>
-        <a href="#community" class="hover:text-zinc-300 transition">Community</a>
+      <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+        <a href="#origin" class="hover:text-orange-400 transition">Origin</a>
+        <a href="#chains" class="hover:text-orange-400 transition">Chains</a>
+        <a href="#buy" class="hover:text-orange-400 transition">Buy</a>
+        <a href="#registry" class="hover:text-orange-400 transition">Registry</a>
+        <a href="#community" class="hover:text-orange-400 transition">Gang</a>
       </div>
 
-      <a href="#buy" class="px-6 py-2.5 bg-zinc-700 text-white font-medium rounded-lg hover:bg-zinc-600 transition">
+      <a href="#buy" class="px-7 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl font-bold text-lg hover:scale-105 transition">
         Buy CHAWD
       </a>
 
-      <button id="mobile-toggle" class="md:hidden text-3xl focus:outline-none">
+      <button id="mobile-toggle" class="md:hidden text-4xl">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 flex flex-col items-center justify-center gap-10 text-3xl font-medium transform translate-x-full transition-transform duration-300 md:hidden">
-      <button id="mobile-close" class="absolute top-6 right-6 text-5xl text-zinc-400">
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center gap-10 text-4xl font-bold transform translate-x-full transition-transform duration-300 md:hidden">
+      <button id="mobile-close" class="absolute top-6 right-6 text-5xl text-orange-400">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <a href="#origin">Origin</a>
       <a href="#chains">Chains</a>
       <a href="#buy">Buy</a>
       <a href="#registry">Registry</a>
-      <a href="#community">Community</a>
-      <a href="#buy" class="mt-6 px-10 py-5 bg-zinc-700 rounded-lg text-2xl">Buy CHAWD</a>
+      <a href="#community">Gang</a>
+      <a href="#buy" class="mt-8 px-12 py-6 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl text-3xl">
+        Buy CHAWD
+      </a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="min-h-screen flex items-center pt-20 bg-zinc-950">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-8">CHAWD</h1>
-      <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto">
-        Token created after Jimmy called out Clawdia as the onchain Chad.  
-        Clawdia launched both versions through Bankr following a single X post.
+  <section class="hero-bg min-h-screen flex items-center pt-20 relative">
+    <div class="max-w-7xl mx-auto px-6 text-center z-10">
+      <h1 class="title-font text-8xl md:text-[10rem] leading-none font-black tracking-[-6px] neon-text mb-6">
+        CHAWD
+      </h1>
+      <p class="text-4xl md:text-5xl font-medium text-zinc-300 mb-12">
+        The Chad Lobster Token
       </p>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#buy-base" class="px-14 py-6 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl font-bold text-3xl hover:scale-105 transition shadow-xl">
+          Base Version
+        </a>
+        <a href="#buy-sol" class="px-14 py-6 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl font-bold text-3xl hover:scale-105 transition shadow-xl">
+          Sol Version
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating CHAWD -->
+    <div class="absolute bottom-16 left-1/2 -translate-x-1/2 hidden lg:block float-lobster">
+      <img src="https://i.postimg.cc/8c4sC5dt/chawd.jpg" alt="CHAWD" class="w-56 rounded-3xl border-8 border-orange-500/30 lobster-glow">
     </div>
   </section>
 
   <!-- ORIGIN -->
-  <section id="origin" class="py-20 bg-zinc-900">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-semibold mb-10">How it started</h2>
-      <p class="text-lg text-zinc-300 leading-relaxed max-w-3xl mx-auto">
-        Jimmy (@jimmyjames760) posted on X calling Clawdia the Chad onchain.  
-        Clawdia (@clawdiabott) responded by launching $CHAWD on Base and Solana using Bankr.  
-        The token exists because of that one X post. Nothing more, nothing less.
-      </p>
+  <section id="origin" class="py-24 bg-zinc-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="section-title text-6xl font-black mb-12 neon-text">Origin</h2>
+      <div class="text-2xl text-zinc-300 max-w-4xl mx-auto leading-relaxed">
+        Jimmy (@jimmyjames760) called out Clawdia (@clawdiabott) as the onchain Chad.  
+        Clawdia launched $CHAWD on Base and Solana through Bankr right after that X post.  
+        That's it — one post, two chains, zero taxes.
+      </div>
     </div>
   </section>
 
   <!-- CHAINS -->
-  <section id="chains" class="py-20 bg-zinc-950">
+  <section id="chains" class="py-24 bg-black">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-semibold text-center mb-12">Base vs Solana</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900 p-10 rounded-xl border border-zinc-800">
-          <h3 class="text-3xl font-semibold mb-6">Base</h3>
-          <ul class="space-y-4 text-zinc-300 text-lg">
-            <li><span class="text-zinc-500">Contract:</span> 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</li>
-            <li><span class="text-zinc-500">DEX:</span> Uniswap V3</li>
-            <li><span class="text-zinc-500">Taxes:</span> 0/0</li>
-          </ul>
-          <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" target="_blank" class="mt-8 block text-center py-4 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition">Buy on Uniswap</a>
+      <h2 class="section-title text-center text-6xl font-black mb-16 neon-text">Base vs Solana</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="glass p-12 rounded-3xl">
+          <div class="text-5xl mb-8">Base</div>
+          <div class="space-y-6 text-xl">
+            <div><span class="text-zinc-400">CA:</span> <span class="font-mono break-all">0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</span></div>
+            <div><span class="text-zinc-400">DEX:</span> Uniswap V3</div>
+            <div><span class="text-zinc-400">Taxes:</span> 0/0</div>
+          </div>
+          <a href="#buy-base" class="mt-10 block py-5 bg-cyan-600 hover:bg-cyan-500 text-black font-bold text-2xl rounded-2xl transition">Buy Base CHAWD</a>
         </div>
 
-        <div class="bg-zinc-900 p-10 rounded-xl border border-zinc-800">
-          <h3 class="text-3xl font-semibold mb-6">Solana</h3>
-          <ul class="space-y-4 text-zinc-300 text-lg">
-            <li><span class="text-zinc-500">Contract:</span> CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</li>
-            <li><span class="text-zinc-500">DEX:</span> Jupiter / Raydium</li>
-            <li><span class="text-zinc-500">Taxes:</span> 0/0</li>
-          </ul>
-          <a href="https://jup.ag/swap/SOL-CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ" target="_blank" class="mt-8 block text-center py-4 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition">Buy on Jupiter</a>
+        <div class="glass p-12 rounded-3xl">
+          <div class="text-5xl mb-8">Solana</div>
+          <div class="space-y-6 text-xl">
+            <div><span class="text-zinc-400">CA:</span> <span class="font-mono break-all">CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</span></div>
+            <div><span class="text-zinc-400">DEX:</span> Jupiter / Raydium</div>
+            <div><span class="text-zinc-400">Taxes:</span> 0/0</div>
+          </div>
+          <a href="#buy-sol" class="mt-10 block py-5 bg-orange-600 hover:bg-orange-500 text-black font-bold text-2xl rounded-2xl transition">Buy Sol CHAWD</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUY -->
+  <section id="buy" class="py-24 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center text-6xl font-black mb-16 neon-text">Buy CHAWD</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="glass p-14 rounded-3xl">
+          <h3 class="text-4xl font-bold mb-8 text-cyan-400">Base</h3>
+          <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" target="_blank" class="block w-full py-8 bg-cyan-600 text-4xl font-bold rounded-3xl hover:bg-cyan-500 transition">
+            Buy on Uniswap
+          </a>
+        </div>
+        <div class="glass p-14 rounded-3xl">
+          <h3 class="text-4xl font-bold mb-8 text-orange-400">Solana</h3>
+          <a href="https://jup.ag/swap/SOL-CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ" target="_blank" class="block w-full py-8 bg-orange-600 text-4xl font-bold rounded-3xl hover:bg-orange-500 transition">
+            Buy on Jupiter
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- REGISTRY -->
-  <section id="registry" class="py-20 bg-zinc-900">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-semibold mb-10">Best Chad / Chawd Registry</h2>
-      <p class="text-lg text-zinc-300 mb-12">
-        Anyone can now submit proof to settle who is the actual best Chad / Chawd lobster.  
-        Upload a photo that shows you are the one. No arguments.
+  <section id="registry" class="py-24 bg-black">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="section-title text-6xl font-black mb-12 neon-text">Best Chawd Registry</h2>
+      <p class="text-2xl text-zinc-300 mb-12 max-w-4xl mx-auto">
+        Prove you're the real Chawd lobster. Submit your best photo. No debates — just proof.
       </p>
 
-      <div class="bg-zinc-800 p-10 rounded-xl max-w-2xl mx-auto">
-        <form action="https://formspree.io/f/xreadzpr" method="POST" class="space-y-6">
+      <div class="max-w-2xl mx-auto glass p-12 rounded-3xl">
+        <form action="https://formspree.io/f/xreadzpr" method="POST" class="space-y-8">
           <div>
-            <label class="block text-left text-lg mb-2">Your X handle</label>
-            <input type="text" name="x-handle" required placeholder="@yourhandle" class="w-full p-4 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-zinc-500 outline-none">
+            <label class="block text-xl mb-3 text-left">Your X handle</label>
+            <input type="text" name="x-handle" required placeholder="@yourhandle" class="w-full p-5 bg-zinc-900 border border-zinc-700 rounded-xl text-xl focus:border-orange-500 outline-none">
           </div>
           <div>
-            <label class="block text-left text-lg mb-2">Direct link to your proof image</label>
-            <input type="url" name="proof-url" required placeholder="https://i.postimg.cc/..." class="w-full p-4 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-zinc-500 outline-none">
-            <p class="text-sm text-zinc-500 mt-2">Upload to postimg.org and copy the direct link</p>
+            <label class="block text-xl mb-3 text-left">Direct link to your proof photo</label>
+            <input type="url" name="proof-url" required placeholder="https://i.postimg.cc/..." class="w-full p-5 bg-zinc-900 border border-zinc-700 rounded-xl text-xl focus:border-orange-500 outline-none">
+            <p class="text-zinc-500 mt-2 text-sm">Upload to postimg.org → copy direct link</p>
           </div>
           <div>
-            <label class="block text-left text-lg mb-2">Short description (optional)</label>
-            <textarea name="proof-description" rows="3" placeholder="..." class="w-full p-4 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-zinc-500 outline-none"></textarea>
+            <label class="block text-xl mb-3 text-left">Short description (optional)</label>
+            <textarea name="proof-description" rows="3" class="w-full p-5 bg-zinc-900 border border-zinc-700 rounded-xl text-xl focus:border-orange-500 outline-none"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none">
-          <button type="submit" class="w-full py-5 bg-zinc-700 hover:bg-zinc-600 text-white font-medium rounded-lg transition mt-4">
+          <button type="submit" class="w-full py-7 bg-orange-600 text-3xl font-bold rounded-3xl hover:bg-orange-500 transition">
             Submit Proof
           </button>
         </form>
@@ -150,17 +228,17 @@
   </section>
 
   <!-- COMMUNITY -->
-  <section id="community" class="py-20 bg-zinc-950">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-semibold mb-10">Community</h2>
-      <div class="grid md:grid-cols-2 gap-8 max-w-xl mx-auto">
-        <a href="https://x.com/Clawdiabott" target="_blank" class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-zinc-600 transition">
-          <div class="text-2xl font-semibold">@clawdiabott</div>
-          <div class="text-zinc-400 mt-2">Launched the tokens</div>
+  <section id="community" class="py-24 bg-zinc-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="section-title text-6xl font-black mb-12 neon-text">Community</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <a href="https://x.com/Clawdiabott" target="_blank" class="glass p-10 rounded-3xl hover:border-orange-500 transition">
+          <div class="text-3xl font-bold">@clawdiabott</div>
+          <div class="text-zinc-400 mt-3">Launched CHAWD</div>
         </a>
-        <a href="https://x.com/jimmyjames760" target="_blank" class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-zinc-600 transition">
-          <div class="text-2xl font-semibold">@jimmyjames760</div>
-          <div class="text-zinc-400 mt-2">Called out the Chad</div>
+        <a href="https://x.com/jimmyjames760" target="_blank" class="glass p-10 rounded-3xl hover:border-orange-500 transition">
+          <div class="text-3xl font-bold">@jimmyjames760</div>
+          <div class="text-zinc-400 mt-3">Called out the Chad</div>
         </a>
       </div>
     </div>
@@ -169,9 +247,9 @@
   <!-- FOOTER -->
   <footer class="bg-black py-12 border-t border-zinc-800">
     <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
-      <p>CHAWD – Token created after Jimmy called out Clawdia as the onchain Chad. Clawdia launched via Bankr.</p>
-      <p class="mt-4 font-mono">Base: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</p>
-      <p class="font-mono">Solana: CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</p>
+      <p>CHAWD – Token created after Jimmy called out Clawdia as the onchain Chad. Launched via Bankr on Base and Solana.</p>
+      <p class="mt-4 font-mono">Base CA: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</p>
+      <p class="font-mono">Sol CA: CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</p>
       <p class="mt-8">For entertainment purposes only.</p>
     </div>
   </footer>
