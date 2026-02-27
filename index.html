@@ -3,131 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHAWD • Chad Lobster on Base & Solana 🦞💪</title>
+  <title>CHAWD • The Chad Lobster 2026 🦞</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    body { font-family: 'Anton', system-ui, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
     
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    .title-font {
+      font-family: 'Anton', sans-serif;
+    }
+
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), 
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
                   url('https://i.postimg.cc/8c4sC5dt/chawd.jpg') center/cover no-repeat fixed;
       background-position: center 30%;
     }
 
     .neon-text {
       text-shadow: 
-        0 0 15px #ff4500,
-        0 0 30px #ff4500,
-        0 0 60px #00ff9f,
-        0 0 100px #00ff9f;
+        0 0 10px #ff4500,
+        0 0 20px #ff4500,
+        0 0 40px #00ff9f,
+        0 0 80px #00ff9f;
     }
 
-    .lobster-glow {
-      filter: drop-shadow(0 0 60px #ff4500);
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .glow-orange:hover {
+      box-shadow: 0 0 40px #ff4500;
     }
 
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -12px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 140px;
-      height: 6px;
+      width: 120px;
+      height: 4px;
       background: linear-gradient(to right, #ff4500, #00ff9f);
+      border-radius: 9999px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .float-lobster {
+      animation: float 6s ease-in-out infinite;
     }
   </style>
 </head>
-<body class="bg-[#0a0f1c] text-white overflow-x-hidden">
+<body class="bg-zinc-950 text-white overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-red-500/30">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-3xl">🦞</div>
-        <span class="text-5xl font-black tracking-tighter neon-text">CHAWD</span>
+        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-orange-500/50">🦞</div>
+        <span class="title-font text-4xl font-black tracking-tighter neon-text">CHAWD</span>
       </div>
-      <div class="hidden md:flex items-center gap-10 text-xl font-medium">
+
+      <div class="hidden md:flex items-center gap-10 text-lg font-medium">
         <a href="#origin" class="hover:text-orange-400 transition">ORIGIN</a>
-        <a href="#chains" class="hover:text-orange-400 transition">SOL vs BASE</a>
+        <a href="#chains" class="hover:text-orange-400 transition">CHAINS</a>
         <a href="#buy" class="hover:text-orange-400 transition">BUY</a>
-        <a href="#registry" class="hover:text-orange-400 transition">BEST CHAWD</a>
-        <a href="#community" class="hover:text-orange-400 transition">CLAW GANG</a>
+        <a href="#registry" class="hover:text-orange-400 transition">REGISTRY</a>
+        <a href="#community" class="hover:text-orange-400 transition">GANG</a>
       </div>
-      <a href="#buy" class="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 font-black text-2xl rounded-full hover:scale-110 transition">BUY $CHAWD</a>
+
+      <a href="#buy" class="px-8 py-3.5 bg-white text-black font-bold text-lg rounded-2xl hover:bg-orange-400 hover:text-white transition-all glow-orange">
+        BUY $CHAWD
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-3xl">☰</button>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center pt-24 relative">
+  <section class="hero-bg min-h-screen flex items-center pt-20 relative">
     <div class="max-w-7xl mx-auto px-6 text-center z-10">
-      <div class="flex justify-center gap-6 mb-8 flex-wrap">
-        <div class="inline-flex items-center gap-4 bg-cyan-600/20 border-2 border-cyan-400 px-8 py-4 rounded-3xl text-2xl font-black">
-          BASE 🦞🌊
+      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-3 rounded-3xl border border-white/20 mb-8">
+        <div class="flex items-center gap-2">
+          <span class="text-cyan-400 text-2xl">●</span>
+          <span class="font-bold">BASE</span>
         </div>
-        <div class="inline-flex items-center gap-4 bg-orange-600/20 border-2 border-orange-400 px-8 py-4 rounded-3xl text-2xl font-black">
-          SOLANA 🦞☀️
+        <div class="w-px h-6 bg-white/30"></div>
+        <div class="flex items-center gap-2">
+          <span class="text-orange-400 text-2xl">●</span>
+          <span class="font-bold">SOLANA</span>
         </div>
       </div>
 
-      <h1 class="text-8xl md:text-[9.5rem] leading-none font-black tracking-[-6px] neon-text mb-4">
+      <h1 class="title-font text-[7rem] md:text-[9.5rem] leading-none font-black tracking-[-8px] neon-text mb-6">
         THE CHAD<br>LOBSTER
       </h1>
-      <p class="text-4xl md:text-5xl font-medium text-emerald-300 mb-12 max-w-3xl mx-auto">
-        Born from @clawdiabott's legendary X post • Pushed by @jimmyjames760 • Dual-chain alpha • Bankr launched
-      </p>
-
-      <div class="flex flex-col md:flex-row gap-8 justify-center">
-        <a href="#buy-base" class="px-16 py-7 bg-gradient-to-r from-cyan-600 to-blue-600 font-black text-4xl rounded-3xl flex items-center justify-center gap-5 hover:scale-105 transition shadow-2xl">
-          BASE CHAWD 🌊
-        </a>
-        <a href="#buy-sol" class="px-16 py-7 bg-gradient-to-r from-orange-600 to-yellow-500 font-black text-4xl rounded-3xl flex items-center justify-center gap-5 hover:scale-105 transition shadow-2xl">
-          SOL CHAWD ☀️
-        </a>
-      </div>
-
-      <div class="mt-20 flex justify-center gap-12 text-xl uppercase tracking-widest">
-        <div><i class="fa-solid fa-check text-emerald-400 mr-3"></i>0% TAXES</div>
-        <div><i class="fa-solid fa-check text-emerald-400 mr-3"></i>LP BURNED</div>
-        <div><i class="fa-solid fa-check text-emerald-400 mr-3"></i>FAIR LAUNCH</div>
-      </div>
-    </div>
-
-    <!-- Floating CHAWD -->
-    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 hidden lg:block">
-      <img src="https://i.postimg.cc/8c4sC5dt/chawd.jpg" alt="CHAWD the Chad Lobster" 
-           class="w-52 h-auto rounded-3xl border-8 border-white/30 lobster-glow">
-    </div>
-  </section>
-
-  <!-- ORIGIN -->
-  <section id="origin" class="py-24 bg-[#0f1a2e]">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="section-title text-7xl font-black mb-12 neon-text">BORN FROM AN X POST</h2>
-      <div class="text-3xl leading-relaxed text-gray-300 max-w-4xl mx-auto">
-        One absolute banger from <a href="https://x.com/Clawdiabott" target="_blank" class="text-orange-400 font-black hover:underline">@clawdiabott</a> called out the Chad Lobster.<br><br>
-        @jimmyjames760 pushed the launch hard and Bankr bot delivered on Base + Solana.<br><br>
-        Same claws. Same energy. Double the chains. Zero mercy.
-      </div>
-    </div>
-  </section>
-
-  <!-- SOL vs BASE -->
-  <section id="chains" class="py-24 bg-black">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="section-title text-center text-7xl font-black mb-16 neon-text">SOLANA vs BASE</h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-gradient-to-br from-blue-950/80 to-cyan-950/50 border-2 border-cyan-400/60 p-12 rounded-3xl">
-          <div class="text-6xl mb-8">🌊 BASE</div>
-          <div class="space-y-8 text-2xl">
-            <div><span class="text-gray-400">CA:</span> <span class="font-mono text-sm break-all">0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</span></div>
-            <div><span class="text-gray-400">DEX:</span> Uniswap V3</div>
-            <div><span class="text-gray-400">Supply:</span> 100,000,000,000</div>
-            <div><span class="text-gray-400">Taxes:</span> <span class="text-emerald-400 font-black">0/0</span></div>
-          </div>
-          <a href="#buy-base" class="mt-12 block text-center py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-black text-3xl rounded-2xl transition">BUY BASE CHAWD</a>
-        </div>
-
-        <div class
+      <p class="max-w-2xl mx-auto text-3xl md:text-4xl font-light text-emerald-300 mb-12">
+        Born on
