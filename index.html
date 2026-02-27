@@ -3,279 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="google" content="notranslate"> <!-- Stops unwanted translate prompt -->
+  <meta name="google" content="notranslate">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>CHAWD • The Chad Lobster 2026 🦞</title>
+  <title>CHAWD – The Chad Lobster Token</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
-    
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      -webkit-tap-highlight-color: transparent; /* Removes blue highlight on tap */
-    }
-    
-    .title-font {
-      font-family: 'Anton', sans-serif;
-    }
-
-    .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
-                  url('https://i.postimg.cc/8c4sC5dt/chawd.jpg') center/cover no-repeat fixed;
-      background-position: center 30%;
-    }
-
-    .neon-text {
-      text-shadow: 
-        0 0 10px #ff4500,
-        0 0 20px #ff4500,
-        0 0 40px #00ff9f,
-        0 0 80px #00ff9f;
-    }
-
-    .glass {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(12px); /* Reduced for mobile perf */
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .glow-orange:hover {
-      box-shadow: 0 0 40px #ff4500;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 120px;
-      height: 4px;
-      background: linear-gradient(to right, #ff4500, #00ff9f);
-      border-radius: 9999px;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-    .float-lobster {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    /* Improve mobile touch targets */
-    a, button {
-      min-height: 44px;
-      min-width: 44px;
-      touch-action: manipulation;
+      width: 80px;
+      height: 3px;
+      background: #e5e7eb;
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-white overflow-x-hidden">
+<body class="bg-zinc-950 text-zinc-100">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-900/80 backdrop-blur border-b border-zinc-800">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-orange-500/50">🦞</div>
-        <span class="title-font text-4xl font-black tracking-tighter neon-text">CHAWD</span>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-zinc-700 rounded-full flex items-center justify-center text-xl">🦞</div>
+        <span class="text-3xl font-semibold tracking-tight">CHAWD</span>
       </div>
 
-      <!-- Desktop links -->
-      <div class="hidden md:flex items-center gap-10 text-lg font-medium">
-        <a href="#origin" class="hover:text-orange-400 transition">ORIGIN</a>
-        <a href="#chains" class="hover:text-orange-400 transition">CHAINS</a>
-        <a href="#buy" class="hover:text-orange-400 transition">BUY</a>
-        <a href="#registry" class="hover:text-orange-400 transition">REGISTRY</a>
-        <a href="#community" class="hover:text-orange-400 transition">GANG</a>
+      <div class="hidden md:flex items-center gap-10 text-base font-medium">
+        <a href="#origin" class="hover:text-zinc-300 transition">Origin</a>
+        <a href="#chains" class="hover:text-zinc-300 transition">Chains</a>
+        <a href="#buy" class="hover:text-zinc-300 transition">Buy</a>
+        <a href="#registry" class="hover:text-zinc-300 transition">Registry</a>
+        <a href="#community" class="hover:text-zinc-300 transition">Community</a>
       </div>
 
-      <!-- Desktop Buy button -->
-      <a href="#buy" class="hidden md:block px-8 py-3.5 bg-white text-black font-bold text-lg rounded-2xl hover:bg-orange-400 hover:text-white transition-all glow-orange">
-        BUY $CHAWD
+      <a href="#buy" class="px-6 py-2.5 bg-zinc-700 text-white font-medium rounded-lg hover:bg-zinc-600 transition">
+        Buy CHAWD
       </a>
 
-      <!-- Mobile Hamburger -->
-      <button id="mobile-toggle" class="md:hidden text-4xl focus:outline-none text-white">
+      <button id="mobile-toggle" class="md:hidden text-3xl focus:outline-none">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center gap-12 text-4xl font-bold transform translate-x-full transition-transform duration-300 md:hidden">
-      <button id="mobile-close" class="absolute top-6 right-6 text-5xl text-orange-400 focus:outline-none">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 flex flex-col items-center justify-center gap-10 text-3xl font-medium transform translate-x-full transition-transform duration-300 md:hidden">
+      <button id="mobile-close" class="absolute top-6 right-6 text-5xl text-zinc-400">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <a href="#origin" class="hover:text-orange-400 transition">ORIGIN</a>
-      <a href="#chains" class="hover:text-orange-400 transition">CHAINS</a>
-      <a href="#buy" class="hover:text-orange-400 transition">BUY</a>
-      <a href="#registry" class="hover:text-orange-400 transition">REGISTRY</a>
-      <a href="#community" class="hover:text-orange-400 transition">GANG</a>
-      <a href="#buy" class="mt-8 px-12 py-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl text-3xl hover:scale-105 transition">
-        BUY $CHAWD
-      </a>
+      <a href="#origin">Origin</a>
+      <a href="#chains">Chains</a>
+      <a href="#buy">Buy</a>
+      <a href="#registry">Registry</a>
+      <a href="#community">Community</a>
+      <a href="#buy" class="mt-6 px-10 py-5 bg-zinc-700 rounded-lg text-2xl">Buy CHAWD</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center pt-20 relative">
-    <div class="max-w-7xl mx-auto px-6 text-center z-10">
-      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-3 rounded-3xl border border-white/20 mb-8">
-        <div class="flex items-center gap-2">
-          <span class="text-cyan-400 text-2xl">●</span>
-          <span class="font-bold">BASE</span>
-        </div>
-        <div class="w-px h-6 bg-white/30"></div>
-        <div class="flex items-center gap-2">
-          <span class="text-orange-400 text-2xl">●</span>
-          <span class="font-bold">SOLANA</span>
-        </div>
-      </div>
-
-      <h1 class="title-font text-[7rem] md:text-[9.5rem] leading-none font-black tracking-[-8px] neon-text mb-6">
-        THE CHAD<br>LOBSTER
-      </h1>
-      <p class="max-w-2xl mx-auto text-3xl md:text-4xl font-light text-emerald-300 mb-12">
-        Born on X • Deployed on Base & Solana • Zero taxes. Pure alpha. 2026 energy.
+  <section class="min-h-screen flex items-center pt-20 bg-zinc-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-8">CHAWD</h1>
+      <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto">
+        Token created after Jimmy called out Clawdia as the onchain Chad.  
+        Clawdia launched both versions through Bankr following a single X post.
       </p>
-
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#buy-base" class="px-16 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl font-black text-3xl hover:scale-105 transition-all shadow-2xl flex items-center justify-center gap-4">
-          BASE CHAWD <span class="text-4xl">🌊</span>
-        </a>
-        <a href="#buy-sol" class="px-16 py-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl font-black text-3xl hover:scale-105 transition-all shadow-2xl flex items-center justify-center gap-4">
-          SOL CHAWD <span class="text-4xl">☀️</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Floating Lobster -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden xl:block float-lobster">
-      <img src="https://i.postimg.cc/8c4sC5dt/chawd.jpg" alt="CHAWD" class="w-64 rounded-3xl border-8 border-white/30 shadow-2xl lobster-glow">
     </div>
   </section>
 
   <!-- ORIGIN -->
-  <section id="origin" class="py-24 bg-zinc-950">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="section-title title-font text-7xl font-black mb-12 neon-text">BORN FROM AN X POST</h2>
-      <div class="max-w-3xl mx-auto text-2xl leading-relaxed text-gray-300">
-        One legendary post by <a href="https://x.com/Clawdiabott" target="_blank" class="text-orange-400 font-bold">@clawdiabott</a> called out the ultimate Chad Lobster.<br><br>
-        @jimmyjames760 pushed it and Bankr delivered on both chains instantly.<br><br>
-        No dev wallet. No taxes. Just claws and gains.
-      </div>
+  <section id="origin" class="py-20 bg-zinc-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-10">How it started</h2>
+      <p class="text-lg text-zinc-300 leading-relaxed max-w-3xl mx-auto">
+        Jimmy (@jimmyjames760) posted on X calling Clawdia the Chad onchain.  
+        Clawdia (@clawdiabott) responded by launching $CHAWD on Base and Solana using Bankr.  
+        The token exists because of that one X post. Nothing more, nothing less.
+      </p>
     </div>
   </section>
 
   <!-- CHAINS -->
-  <section id="chains" class="py-24 bg-black">
+  <section id="chains" class="py-20 bg-zinc-950">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="section-title text-center title-font text-7xl font-black mb-16 neon-text">SOLANA vs BASE</h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="glass p-12 rounded-3xl border border-cyan-400/30 hover:border-cyan-400 transition-all group">
-          <div class="text-6xl mb-8">🌊 BASE</div>
-          <div class="space-y-6 text-xl">
-            <div class="flex justify-between"><span class="text-gray-400">CA</span><span class="font-mono text-sm break-all">0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</span></div>
-            <div class="flex justify-between"><span class="text-gray-400">DEX</span><span class="font-bold">Uniswap V3</span></div>
-            <div class="flex justify-between"><span class="text-gray-400">Taxes</span><span class="text-emerald-400 font-black">0/0</span></div>
-          </div>
-          <a href="#buy-base" class="mt-12 block text-center py-5 bg-cyan-500 hover:bg-cyan-400 text-black font-black text-2xl rounded-2xl transition">BUY BASE CHAWD</a>
+      <h2 class="text-4xl font-semibold text-center mb-12">Base vs Solana</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-zinc-900 p-10 rounded-xl border border-zinc-800">
+          <h3 class="text-3xl font-semibold mb-6">Base</h3>
+          <ul class="space-y-4 text-zinc-300 text-lg">
+            <li><span class="text-zinc-500">Contract:</span> 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</li>
+            <li><span class="text-zinc-500">DEX:</span> Uniswap V3</li>
+            <li><span class="text-zinc-500">Taxes:</span> 0/0</li>
+          </ul>
+          <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" target="_blank" class="mt-8 block text-center py-4 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition">Buy on Uniswap</a>
         </div>
 
-        <div class="glass p-12 rounded-3xl border border-orange-400/30 hover:border-orange-400 transition-all group">
-          <div class="text-6xl mb-8">☀️ SOLANA</div>
-          <div class="space-y-6 text-xl">
-            <div class="flex justify-between"><span class="text-gray-400">CA</span><span class="font-mono text-sm break-all">CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</span></div>
-            <div class="flex justify-between"><span class="text-gray-400">DEX</span><span class="font-bold">Jupiter / Raydium</span></div>
-            <div class="flex justify-between"><span class="text-gray-400">Taxes</span><span class="text-emerald-400 font-black">0/0</span></div>
-          </div>
-          <a href="#buy-sol" class="mt-12 block text-center py-5 bg-orange-500 hover:bg-orange-400 text-black font-black text-2xl rounded-2xl transition">BUY SOL CHAWD</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUY + LIVE CHARTS -->
-  <section id="buy" class="py-24 bg-zinc-950">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="section-title text-center title-font text-7xl font-black mb-16 neon-text">GET YOUR CHAWD • LIVE CHARTS</h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div id="buy-base" class="glass p-14 rounded-3xl">
-          <h3 class="text-5xl font-black mb-10 text-cyan-400">BASE CHAWD</h3>
-          <a href="https://dexscreener.com/base/0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" target="_blank" class="block mb-8 text-center py-4 border border-cyan-400 rounded-2xl hover:bg-cyan-400/10 transition">📊 View Live Base Chart</a>
-          <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3" target="_blank" onclick="launchConfetti()" class="block w-full py-8 bg-gradient-to-r from-cyan-500 to-blue-600 text-4xl font-black rounded-3xl text-center hover:scale-105 transition">BUY ON UNISWAP 🦞</a>
-        </div>
-
-        <div id="buy-sol" class="glass p-14 rounded-3xl">
-          <h3 class="text-5xl font-black mb-10 text-orange-400">SOL CHAWD</h3>
-          <a href="https://dexscreener.com/solana/cam5m9sursbisubhevghibm7lp4ijggvak8urqyuw4qq" target="_blank" class="block mb-8 text-center py-4 border border-orange-400 rounded-2xl hover:bg-orange-400/10 transition">📊 View Live Sol Chart</a>
-          <a href="https://jup.ag/swap/SOL-CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ" target="_blank" onclick="launchConfetti()" class="block w-full py-8 bg-gradient-to-r from-orange-500 to-red-600 text-4xl font-black rounded-3xl text-center hover:scale-105 transition">BUY ON JUPITER 🦞</a>
+        <div class="bg-zinc-900 p-10 rounded-xl border border-zinc-800">
+          <h3 class="text-3xl font-semibold mb-6">Solana</h3>
+          <ul class="space-y-4 text-zinc-300 text-lg">
+            <li><span class="text-zinc-500">Contract:</span> CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</li>
+            <li><span class="text-zinc-500">DEX:</span> Jupiter / Raydium</li>
+            <li><span class="text-zinc-500">Taxes:</span> 0/0</li>
+          </ul>
+          <a href="https://jup.ag/swap/SOL-CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ" target="_blank" class="mt-8 block text-center py-4 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition">Buy on Jupiter</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- REGISTRY -->
-  <section id="registry" class="py-24 bg-black">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="section-title title-font text-7xl font-black mb-12 neon-text">BEST CHAWD REGISTRY 2026</h2>
-      <p class="text-3xl text-emerald-300 mb-12 max-w-3xl mx-auto">Prove you're the real Chad Lobster. No debates. Top submissions get featured by @clawdiabott & @jimmyjames760.</p>
+  <section id="registry" class="py-20 bg-zinc-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-10">Best Chad / Chawd Registry</h2>
+      <p class="text-lg text-zinc-300 mb-12">
+        Anyone can now submit proof to settle who is the actual best Chad / Chawd lobster.  
+        Upload a photo that shows you are the one. No arguments.
+      </p>
 
-      <div class="max-w-2xl mx-auto glass p-12 rounded-3xl">
-        <form action="https://formspree.io/f/xreadzpr" method="POST" class="space-y-8">
+      <div class="bg-zinc-800 p-10 rounded-xl max-w-2xl mx-auto">
+        <form action="https://formspree.io/f/xreadzpr" method="POST" class="space-y-6">
           <div>
-            <label class="block text-xl mb-3">Your X Handle (@)</label>
-            <input type="text" name="x-handle" required placeholder="@yourhandle" class="w-full p-6 bg-zinc-900 border border-white/20 rounded-2xl text-xl focus:border-orange-400 outline-none transition">
+            <label class="block text-left text-lg mb-2">Your X handle</label>
+            <input type="text" name="x-handle" required placeholder="@yourhandle" class="w-full p-4 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-zinc-500 outline-none">
           </div>
           <div>
-            <label class="block text-xl mb-3">Direct Proof Image Link</label>
-            <input type="url" name="proof-url" required placeholder="https://i.postimg.cc/..." class="w-full p-6 bg-zinc-900 border border-white/20 rounded-2xl text-xl focus:border-orange-400 outline-none transition">
-            <p class="text-sm text-gray-400 mt-3">Upload to Postimg.org → copy Direct Link</p>
+            <label class="block text-left text-lg mb-2">Direct link to your proof image</label>
+            <input type="url" name="proof-url" required placeholder="https://i.postimg.cc/..." class="w-full p-4 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-zinc-500 outline-none">
+            <p class="text-sm text-zinc-500 mt-2">Upload to postimg.org and copy the direct link</p>
           </div>
           <div>
-            <label class="block text-xl mb-3">Brief Flex Description</label>
-            <textarea name="proof-description" rows="4" placeholder="Flexing with real claws at sunrise..." class="w-full p-6 bg-zinc-900 border border-white/20 rounded-2xl text-xl focus:border-orange-400 outline-none transition"></textarea>
+            <label class="block text-left text-lg mb-2">Short description (optional)</label>
+            <textarea name="proof-description" rows="3" placeholder="..." class="w-full p-4 bg-zinc-900 border border-zinc-700 rounded-lg text-white focus:border-zinc-500 outline-none"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none">
-          <button type="submit" class="w-full py-8 bg-gradient-to-r from-orange-500 to-red-600 text-4xl font-black rounded-3xl hover:scale-105 transition">SUBMIT YOUR PROOF 🦞</button>
+          <button type="submit" class="w-full py-5 bg-zinc-700 hover:bg-zinc-600 text-white font-medium rounded-lg transition mt-4">
+            Submit Proof
+          </button>
         </form>
       </div>
     </div>
   </section>
 
   <!-- COMMUNITY -->
-  <section id="community" class="py-24 bg-zinc-950">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="section-title title-font text-7xl font-black mb-12 neon-text">CLAW GANG</h2>
-      <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-        <a href="https://x.com/Clawdiabott" target="_blank" class="glass p-10 rounded-3xl hover:border-orange-400 transition group">
-          <i class="fa-brands fa-x-twitter text-7xl mb-6 text-orange-400 group-hover:scale-110 transition"></i>
-          <div class="font-black text-4xl">@clawdiabott</div>
-          <div class="text-orange-400">Origin • The Callout King</div>
+  <section id="community" class="py-20 bg-zinc-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-10">Community</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-xl mx-auto">
+        <a href="https://x.com/Clawdiabott" target="_blank" class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-zinc-600 transition">
+          <div class="text-2xl font-semibold">@clawdiabott</div>
+          <div class="text-zinc-400 mt-2">Launched the tokens</div>
         </a>
-        <a href="https://x.com/jimmyjames760" target="_blank" class="glass p-10 rounded-3xl hover:border-orange-400 transition group">
-          <i class="fa-brands fa-x-twitter text-7xl mb-6 text-orange-400 group-hover:scale-110 transition"></i>
-          <div class="font-black text-4xl">@jimmyjames760</div>
-          <div class="text-orange-400">Launch Pusher • Crypto Cowboy</div>
+        <a href="https://x.com/jimmyjames760" target="_blank" class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-zinc-600 transition">
+          <div class="text-2xl font-semibold">@jimmyjames760</div>
+          <div class="text-zinc-400 mt-2">Called out the Chad</div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black py-16 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
-      <p class="text-xl">$CHAWD — Chad Lobster Meme • Base + Solana • Entertainment only • DYOR</p>
-      <p class="mt-4 font-mono text-sm">Base CA: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</p>
-      <p class="font-mono text-sm">Sol CA: CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</p>
-      <p class="mt-10">2026 • Built with claws & pure alpha</p>
+  <footer class="bg-black py-12 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+      <p>CHAWD – Token created after Jimmy called out Clawdia as the onchain Chad. Clawdia launched via Bankr.</p>
+      <p class="mt-4 font-mono">Base: 0x6120aa6d4cec538258b34efe9cc09235d6cf7ba3</p>
+      <p class="font-mono">Solana: CAm5M9sUrsBiSubhEvGHiBM7LP4iJGGVAk8urqyUw4qQ</p>
+      <p class="mt-8">For entertainment purposes only.</p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
+    // Mobile menu
     const toggle = document.getElementById('mobile-toggle');
     const menu = document.getElementById('mobile-menu');
     const closeBtn = document.getElementById('mobile-close');
@@ -291,7 +193,6 @@
         menu.classList.remove('translate-x-0');
       });
 
-      // Close when clicking links
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           menu.classList.add('translate-x-full');
@@ -299,32 +200,6 @@
         });
       });
     }
-
-    // Confetti
-    function launchConfetti() {
-      const colors = ['#ff4500', '#00ff9f', '#ffd700', '#00bfff'];
-      for (let i = 0; i < 200; i++) {
-        setTimeout(() => {
-          const c = document.createElement('div');
-          c.style.position = 'fixed'; c.style.zIndex = 99999;
-          c.style.left = Math.random() * 100 + 'vw';
-          c.style.top = '-20px';
-          c.style.width = '10px'; c.style.height = '10px';
-          c.style.background = colors[Math.floor(Math.random() * colors.length)];
-          c.style.opacity = Math.random() * 0.8 + 0.6;
-          document.body.appendChild(c);
-          let y = -20, vx = (Math.random() - 0.5) * 8;
-          const fall = setInterval(() => {
-            y += 10 + Math.random() * 8;
-            c.style.top = y + 'px';
-            c.style.left = (parseFloat(c.style.left) + vx) + 'vw';
-            if (y > window.innerHeight) { clearInterval(fall); c.remove(); }
-          }, 16);
-        }, i * 2);
-      }
-    }
-
-    setTimeout(launchConfetti, 1200);
   </script>
 </body>
 </html>
